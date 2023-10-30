@@ -22,7 +22,7 @@ jobs:
     - name: Set up Python-dev
       run: |
         pip install poetry && \
-        poetry install --only dev
+        poetry install
 
     - name: Run tests
       run: pytest
