@@ -19,15 +19,8 @@ jobs:
     - name: Build Docker Image
       run: docker build -t app .
 
-    - name: Set up Python-dev
-      run: |
-        pip install poetry && \
-        poetry install
-
     - name: Run tests
-      run: |
-        docker exec -it app bash && \
-        pytest
+      run: docker run app pytest
 
     - name: Push Docker Image to registry
       run: |
