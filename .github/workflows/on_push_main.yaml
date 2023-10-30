@@ -20,7 +20,7 @@ jobs:
       run: docker build -t app .
 
     - name: Run tests
-      run: docker run app pytest --no-cache
+      run: docker run app pytest
 
     - name: Push Docker Image to registry
       run: |
