@@ -1,6 +1,0 @@
-on:
- push:
-   tags:
-     - '!refs/tags/*'
-   branches:
-     - '*'
