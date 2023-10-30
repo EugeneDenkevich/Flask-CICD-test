@@ -25,7 +25,9 @@ jobs:
         poetry install
 
     - name: Run tests
-      run: pytest
+      run: |
+        docker exec -it app bash && \
+        pytest
 
     - name: Push Docker Image to registry
       run: |
