@@ -3,8 +3,11 @@ FROM python:3.11.5-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN useradd -ms /bin/bash newuser && \
-    python -m pip install --upgrade pip && \
+# RUN useradd -ms /bin/bash newuser && \
+#     python -m pip install --upgrade pip && \
+#     pip install poetry
+
+RUN python -m pip install --upgrade pip && \
     pip install poetry
 
 WORKDIR /app
@@ -15,6 +18,6 @@ RUN poetry config virtualenvs.create false && \
 
 COPY . .
 
-USER newuser
+# USER newuser
 
 CMD [ "python", "src/app.py" ]
