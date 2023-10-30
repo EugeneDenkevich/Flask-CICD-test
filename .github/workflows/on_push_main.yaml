@@ -22,7 +22,7 @@ jobs:
     - name: Run tests
       run: |
         docker network create mynetwork && \
-        docker run --network mynetwork app pytet
+        docker run --network mynetwork app pytest
 
     - name: Push Docker Image to registry
       run: |
