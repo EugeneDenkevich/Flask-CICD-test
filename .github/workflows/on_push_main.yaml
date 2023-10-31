@@ -51,7 +51,7 @@ jobs:
         echo "The logining has done successful"
 
     - name: Push Docker Image to Docker Hub
-      run: docker push app
+      run: docker push eugenestudio/eugene-repo
     
 
     # - name: Push Docker Image to registry
