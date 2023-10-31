@@ -1,0 +1,9 @@
+version: "v1"
+
+services:
+
+  api:
+    image: eugenestudio/eugene-repo:latest
+    ports: 
+      - "5000:5000"
+    restart: always
