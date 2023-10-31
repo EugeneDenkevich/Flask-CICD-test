@@ -43,7 +43,7 @@ jobs:
       run: |
         docker network create mynetwork && \
         docker run --network mynetwork -d -p 5000:5000 --name app eugenestudio/eugene-repo:latest && \
-        docker run --network mynetwork app pytest
+        docker run --network mynetwork eugenestudio/eugene-repo:latest pytest
 
     - name: Login to Docker Hub
       run: |
