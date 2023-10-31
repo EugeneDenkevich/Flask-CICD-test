@@ -45,9 +45,16 @@ jobs:
         docker run --network mynetwork -d -p 5000:5000 --name app app && \
         docker run --network mynetwork app pytest
 
-    - name: Push Docker Image to registry
-      run: |
-        echo "Logging in to Docker Hub ass ${{ secrets.DOCKER_USERNAME }}"
-        echo ${{ secrets.DOCKER_PASSWORD }} |
-        docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-        docker push app
+    - name: Login to Docker Hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Push Docker Image to Docker Hub
+      run: docker push eugenestudio/app:latest
+    
+
+    # - name: Push Docker Image to registry
+    #   run: |
+    #     echo "Logging in to Docker Hub ass ${{ secrets.DOCKER_USERNAME }}"
+    #     echo ${{ secrets.DOCKER_PASSWORD }} |
+    #     docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+    #     docker push app
