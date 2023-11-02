@@ -1,1 +1,1 @@
-![workflow](https://github.com/EugeneStudio/Flask-CICD-test/actions/workflows/on_push_main.yaml/badge.svg)
+![workflow](https://github.com/EugeneDenkevich/Flask-CICD-test/actions/workflows/on_push_main.yaml/badge.svg)
