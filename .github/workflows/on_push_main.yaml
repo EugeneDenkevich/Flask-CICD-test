@@ -40,8 +40,7 @@ jobs:
       - name: Checking
         run: pwd
       - name: Stop and remove containers, networks
-        # run: cd ../../../app && sudo docker compose down
-        run: cd ../../../../app && pwd
+        run: cd ../../../../app && sudo docker compose down
       - name: Remove unused data
         run: sudo docker system prune -a -f
     
