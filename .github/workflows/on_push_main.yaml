@@ -39,6 +39,8 @@ jobs:
     steps:
       - name: Stop and remove containers, networks
         run: sudo docker compose down
+      - name: Checking
+        run: ls
       - name: Remove unused data
         run: sudo docker system prune -a -f
     
