@@ -38,7 +38,7 @@ jobs:
     needs: build
     steps:
       - name: Checking
-        run: ls
+        run: pwd
       - name: Stop and remove containers, networks
         run: cd ../../../app && sudo docker compose down
       - name: Remove unused data
