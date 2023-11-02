@@ -38,7 +38,7 @@ jobs:
     needs: build
     steps:
       - name: Stop and remove containers, networks
-        run: docker-compose down
+        run: docker compose down
       - name: Remove unused data
         run: docker system prune -a -f
     
@@ -49,4 +49,4 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v3
       - name: docker-compose
-        run: docker-compose up -d
+        run: docker compose up -d
