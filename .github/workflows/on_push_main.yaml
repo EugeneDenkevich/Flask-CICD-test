@@ -37,13 +37,13 @@ jobs:
     runs-on: self-hosted
     needs: build
     steps:
-      - name: Checking
-        run: pwd
+      - name: Go to the correct folder
+        run: cd ../../../../app
       - name: Stop and remove containers, networks
-        run: cd ../../../../app && sudo docker compose down
+        run: sudo docker compose down
       - name: Remove unused data
         run: sudo docker system prune -a -f
-    
+
   deploy:
     runs-on: self-hosted
     needs: prepare-env
